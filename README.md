@@ -4,57 +4,33 @@ This project is a question-answering (QA) system that leverages SentenceTransfor
 
 ## Table of Contents
 
-- [Directory Structure](#directory-structure)
-- [Tasks](#tasks)
-- [Getting Started](#getting-started)
+
 - [Usage](#usage)
 - [Docker Containerization](#docker-containerization)
 - [API Deployment](#api-deployment)
 - [Evaluation](#evaluation)
-- [Optional Tasks](#optional-tasks)
-- [Demo](#demo)
-- [Contributing](#contributing)
 - [License](#license)
 
-## Directory Structure
-question_answering/
-│
-├── app/
-│ ├── app.py # Flask API implementation
-│ ├── retrieval.py # Passage retrieval logic
-│ ├── model.py # SentenceTransformers utilities
-│ ├── parsing.py # Document parsing logic
-│ ├── indexing.py # ElasticSearch indexing logic
-│ ├── gui.py # GUI interface implementation (OPTIONAL)
-│ └── gen_ai.py # Generative AI utilities (OPTIONAL)
-│
-├── docker/
-│ ├── Dockerfile # Docker configuration
-│ └── docker-compose.yml # Docker Compose configuration
-│
-├── docs/
-│ ├── passage_metadata.csv # Passages and metadata
-│ ├── passage_metadata_emb.csv# Passages, metadata, and embeddings
-│ ├── question_answers.csv # Questions and answers
-│ ├── questions_answers_gen.csv# Questions, answers, generative AI answer
-│ ├── evaluation.csv # Evaluation data
-│ ├── performance.csv # Evaluation results
-│ ├── technical.pdf # Technical documentation
-│
-└── README.md # Description of implementation and setup
+
 
 # Usage
-# Parsing: Use the parsing.py script to parse legal files and generate passage_metadata.csv.
+### Parsing
+Use the parsing.py script to parse legal files and generate passage_metadata.csv.
 
-# Passage Embeddings: Generate passage embeddings using SentenceTransformers and save them in passage_metadata_emb.csv using the model.py script.
+### Passage Embeddings
+Generate passage embeddings using SentenceTransformers and save them in passage_metadata_emb.csv using the model.py script.
 
-# ElasticSearch Integration: Set up an ElasticSearch index and index the data using the indexing.py script.
+### ElasticSearch Integration
+Set up an ElasticSearch index and index the data using the indexing.py script.
 
-# Document Retrieval: Implement the retrieval logic in the retrieval.py script to retrieve relevant passages from ElasticSearch.
+### Document Retrieval
+Implement the retrieval logic in the retrieval.py script to retrieve relevant passages from ElasticSearch.
 
-# API Deployment: Create a Flask API using the app.py script for user interaction.
+### API Deployment
+Create a Flask API using the app.py script for user interaction.
 
-# Evaluation: Evaluate the system using manually derived evaluation data.
+### Evaluation
+Evaluate the system using manually derived evaluation data.
 
 
 
