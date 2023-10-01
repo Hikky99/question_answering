@@ -2,20 +2,21 @@ version: '3'
 services:
   web:
     build:
-      context: ./app  # Path to the Flask application code directory
+      context: ./  # Set the context to the current directory (where docker-compose.yml is located)
+      dockerfile: ./Dockerfile  # Specify the path to your Dockerfile
     ports:
-      - "5000:5000"  # Map the container's port to the host's port
+      - "5000:5000"
     volumes:
-      - ./app:/app  # Mount the application directory
+      - ./app:/app
     environment:
-      - FLASK_APP=app.py  # Set the Flask app entry point
-      - ELASTICSEARCH_HOST=elasticsearch  # Specify your ElasticSearch host (container name)
+      - FLASK_APP=app.py
+      - ELASTICSEARCH_HOST=elasticsearch
     depends_on:
-      - elasticsearch  # Ensure the ElasticSearch container starts first
+      - elasticsearch
 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.0  # Use an ElasticSearch image
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.0
     environment:
-      - discovery.type=single-node  # Configure as a single-node ElasticSearch instance
+      - discovery.type=single-node
     ports:
-      - "9200:9200"  # Map the container's port to the host's port
+      - "9200:9200"
