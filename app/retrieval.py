@@ -71,4 +71,4 @@ if __name__ == "__main__":
     result_df = pd.DataFrame(relevant_passages)
 
     # Save the results to a CSV file
-    result_df.to_csv('questions_answers.csv', index=False)
+    result_df.to_csv('docs/questions_answers.csv', index=False)
