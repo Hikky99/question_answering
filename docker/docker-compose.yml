@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./app  # Path to the Flask application code directory
+    ports:
+      - "5000:5000"  # Map the container's port to the host's port
+    volumes:
+      - ./app:/app  # Mount the application directory
+    environment:
+      - FLASK_APP=app.py  # Set the Flask app entry point
+      - ELASTICSEARCH_HOST=elasticsearch  # Specify your ElasticSearch host (container name)
+    depends_on:
+      - elasticsearch  # Ensure the ElasticSearch container starts first
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.0  # Use an ElasticSearch image
+    environment:
+      - discovery.type=single-node  # Configure as a single-node ElasticSearch instance
+    ports:
+      - "9200:9200"  # Map the container's port to the host's port
