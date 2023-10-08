@@ -30,8 +30,7 @@ def ask_question():
         question = data['question']
 
         # Implement logic to retrieve relevant passages from ElasticSearch
-        # You can use the 'es' object to query ElasticSearch
-        # Store the results in a variable 'answers'
+       
 
         # Format the answers as needed
         formatted_answers = format_answers(answers)
@@ -43,8 +42,7 @@ def ask_question():
 
 def format_answers(answers):
     # Implement logic to format the retrieved answers
-    # This can include selecting the top answers, extracting metadata, etc.
-    # Return the formatted answers as a list of dictionaries
+   
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -61,7 +61,7 @@ if __name__ == "__main__":
     # Number of top passages to retrieve
     num_results_to_retrieve = 3
 
-    # Generate an example query embedding (you should use embeddings from your model)
+    # Generate an example query embedding 
     query_embedding = np.random.rand(768)
 
     # Retrieve relevant passages

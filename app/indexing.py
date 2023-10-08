@@ -6,7 +6,10 @@ import numpy as np
 input_csv_path = 'docs/passage_metadata_emb.csv'
 
 # Connect to your ElasticSearch cluster
-es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
+es = Elasticsearch([{'host': 'localhost', 'port': 9200, 'scheme': 'http'}])
+
+# Set the http_auth option separately
+es.http_auth = ('elastic', 'TWeiCmKKHA=iBSSdIRA9')
 
 # Check if the ElasticSearch index already exists, if not, create it
 index_name = 'passage_embeddings'  # You can choose a suitable name
