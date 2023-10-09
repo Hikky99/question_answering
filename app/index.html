@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question-Answering System</title>
+</head>
+<body>
+    <h1>Question-Answering System</h1>
+    <form method="POST" action="/ask">
+        {{ form.hidden_tag() }}
+        <label for="question">Enter your question:</label>
+        {{ form.question() }}
+        <br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html>

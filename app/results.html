@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question-Answering System - Results</title>
+</head>
+<body>
+    <h1>Question-Answering System - Results</h1>
+    <p>Your question: {{ question }}</p>
+    <h2>Answers:</h2>
+    <ul>
+        {% for answer in answers %}
+        <li>{{ answer }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
