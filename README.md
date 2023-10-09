@@ -53,5 +53,19 @@ Evaluate the performance of the system manually.
 
 
 
-# License
+## Docker
+
+To pull the Docker image, please use:
+
+
+docker pull hikky9/question-answering:tag
+
+
+To run it, use:
+
+docker run -it hikky9/question-answering:tag
+
+
+
+
 

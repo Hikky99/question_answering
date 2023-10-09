@@ -3,13 +3,16 @@ import pandas as pd
 import numpy as np
 
 # Paths to input CSV files
-input_csv_path = 'docs/passage_metadata_emb.csv'
+input_csv_path = '../docs/passage_metadata_emb.csv'
+
 
 # Connect to your ElasticSearch cluster
 es = Elasticsearch([{'host': 'localhost', 'port': 9200, 'scheme': 'http'}])
 
 # Set the http_auth option separately
 es.http_auth = ('elastic', 'TWeiCmKKHA=iBSSdIRA9')
+
+
 
 # Check if the ElasticSearch index already exists, if not, create it
 index_name = 'passage_embeddings'  # You can choose a suitable name
@@ -20,7 +23,7 @@ if not es.indices.exists(index=index_name):
             "properties": {
                 "Passage": {"type": "text"},
                 "Metadata": {"type": "keyword"},
-                "Embedding": {"type": "dense_vector", "dims": 768}  # Adjust dims as per your model
+                "Embedding": {"type": "dense_vector", "dims": 768}
             }
         }
     }
@@ -30,7 +33,7 @@ if not es.indices.exists(index=index_name):
     print(f"Index '{index_name}' created successfully.")
 
 # Read the input CSV containing passages, metadata, and embeddings
-data = pd.read_csv(input_csv_path)
+data = pd.read_csv("../docs/passage_metadata_emb.csv")
 
 # Index each row of data into ElasticSearch
 for index, row in data.iterrows():
