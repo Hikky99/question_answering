@@ -1,4 +1,5 @@
 from elasticsearch import Elasticsearch
+import sys
 import pandas as pd
 import numpy as np
 
@@ -9,8 +10,7 @@ input_csv_path = '../docs/passage_metadata_emb.csv'
 # Connect to your ElasticSearch cluster
 es = Elasticsearch([{'host': 'localhost', 'port': 9200, 'scheme': 'http'}])
 
-# Set the http_auth option separately
-es.http_auth = ('elastic', 'TWeiCmKKHA=iBSSdIRA9')
+
 
 
 
